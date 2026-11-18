@@ -1,4 +1,7 @@
-# Diary App 08 — Redux Toolkit
+# Laporan Praktikum 08: Redux Toolkit
+
+**Nama:** Rifan Maulana<br>
+**NIM:** 2430511018
 
 Aplikasi diary sederhana untuk praktikum React Native dan Expo Router. Daftar diary dan status favorite dikelola oleh Redux Toolkit agar Home, Detail, Edit, dan Favorite membaca sumber data yang sama. Isi form tetap memakai state lokal.
 
@@ -51,6 +54,16 @@ src/
 Route berada di `src/app`. Konfigurasi project seperti `app.json`, `package.json`, dan `tsconfig.json` tetap di root. Struktur `src/app` adalah pola yang didukung Expo Router; hanya ada satu folder route agar tidak membingungkan saat pengembangan.
 
 ## Praktikum Redux
+
+### Eksperimen 1 — Perhatikan Re-render
+
+Log `Home render` dan `Favorites render` sudah dipasang pada kedua screen. Untuk mengamati perubahan:
+
+1. Buka tab Favorite sekali, lalu kembali ke Home agar kedua screen sudah aktif.
+2. Lihat log pada terminal Metro atau konsol debugging.
+3. Tekan ikon hati pada salah satu diary.
+
+Home dan Favorite membaca `state.diary.entries` melalui selector. Saat status favorite berubah, referensi daftar diperbarui dan kedua screen merender ulang. Di Favorite, daftar yang terlihat juga dihitung ulang dari entry yang berstatus `liked`.
 
 ### Eksperimen 2 — Action Payload
 
